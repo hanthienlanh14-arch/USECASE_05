@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tạo giải đấu – EsportsHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">ESPORTS<span>HUB</span></div>
+      <nav class="nav">
+        <a href="index.html" class="active">Giải đấu</a>
+        <a href="#">Đội tuyển</a>
+        <a href="lichthidau.html">Lịch thi đấu</a>
+        <a href="#">Bảng xếp hạng</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <h1>Tạo giải đấu mới</h1>
+        <span class="user">Admin: Vy ▾</span>
+      </header>
+      <div id="msg" class="msg"></div>
+
+      <section class="card">
+        <form id="formGiaiDau">
+          <div class="form-grid">
+            <div>
+              <label for="ten">Tên giải đấu</label>               <!-- GiaiDau.TenGiaiDau -->
+              <input id="ten" name="TenGiaiDau" placeholder="Nhập tên giải...">
+            </div>
+            <div>
+              <label for="tt">Trạng thái</label>                  <!-- GiaiDau.TrangThai -->
+              <select id="tt" name="TrangThai">
+                <option>Sắp diễn ra</option><option>Đang diễn ra</option><option>Kết thúc</option>
+              </select>
+            </div>
+            <div>
+              <label for="bd">Ngày bắt đầu</label>                <!-- GiaiDau.NgayBatDau -->
+              <input id="bd" name="NgayBatDau" type="date">
+            </div>
+            <div>
+              <label for="kt">Ngày kết thúc</label>               <!-- GiaiDau.NgayKetThuc -->
+              <input id="kt" name="NgayKetThuc" type="date">
+            </div>
+          </div>
+          <div class="actions">
+            <button type="reset" class="btn">Hủy</button>
+            <button type="submit" class="btn btn-cta">Lưu giải đấu</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Mã</th><th>Tên giải đấu</th><th>Bắt đầu</th><th>Kết thúc</th><th>Trạng thái</th></tr></thead>
+            <tbody id="bangGiaiDau"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/giaidau.js"></script>
+</body>
+</html>

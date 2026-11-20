@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lịch thi đấu – EsportsHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">ESPORTS<span>HUB</span></div>
+      <nav class="nav">
+        <a href="index.html">Giải đấu</a>
+        <a href="#">Đội tuyển</a>
+        <a href="lichthidau.html" class="active">Lịch thi đấu</a>
+        <a href="#">Bảng xếp hạng</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <h1 id="tieuDe">Lịch thi đấu</h1>
+        <span id="badgeGiai"></span>
+      </header>
+      <div id="msg" class="msg"></div>
+
+      <section class="card">
+        <div class="form-grid">
+          <div>
+            <label for="gd">Giải đấu</label>                       <!-- TranDau.MaGiaiDau -->
+            <select id="gd"></select>
+          </div>
+          <div>
+            <label for="ngay">Ngày thi đấu</label>                 <!-- TranDau.NgayThiDau -->
+            <select id="ngay"><option value="">Tất cả ngày</option></select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Mã trận</th><th>Đội 1</th><th>Đội 2</th><th>Ngày thi đấu</th><th>Tỉ số</th></tr></thead>
+            <tbody id="bangTran"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button class="btn" id="moPopup">Thêm trận đấu</button>
+        <button class="btn btn-cta" id="moTiSo">Cập nhật tỉ số</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Popup Thêm trận đấu -->
+  <dialog id="popup">
+    <h2>Thêm trận đấu</h2>
+    <form id="formTran" method="dialog">
+      <div id="msgPopup" class="msg"></div>
+      <div class="field"><label for="d1">Đội 1</label><select id="d1"></select></div>   <!-- TranDau.MaDoi1 -->
+      <div class="field"><label for="d2">Đội 2</label><select id="d2"></select></div>   <!-- TranDau.MaDoi2 -->
+      <div class="field"><label for="nt">Ngày thi đấu</label><input id="nt" type="date"></div>
+      <div class="actions">
+        <button type="button" class="btn" id="dong">Hủy</button>
+        <button type="submit" class="btn btn-cta">Lưu trận đấu</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Popup Cập nhật tỉ số -->
+  <dialog id="popupTiSo">
+    <h2>Cập nhật tỉ số</h2>
+    <form id="formTiSo" method="dialog">
+      <div id="msgTiSo" class="msg"></div>
+      <p id="tenTran" style="margin-bottom:10px"></p>
+      <div class="field"><label for="tiso">Tỉ số (VD: 2 - 1)</label><input id="tiso" placeholder="2 - 1"></div>   <!-- TranDau.TiSo -->
+      <div class="actions">
+        <button type="button" class="btn" id="dongTiSo">Hủy</button>
+        <button type="submit" class="btn btn-cta">Lưu tỉ số</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/api.js"></script>
+  <script src="js/lichthidau.js"></script>
+</body>
+</html>
